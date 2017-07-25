@@ -69,7 +69,7 @@ class Incoming(View):
         try:
             self.handle_email(email, attachments=attachments)
             return HttpResponse("OK")
-        except RejectedMailException, e:
+        except RejectedMailException as e:
             return HttpResponse("Email not accepted", status=406)
 
     def handle_email(self, email, attachments=None):
