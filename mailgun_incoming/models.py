@@ -29,6 +29,7 @@ class EmailBaseModel(models.Model):
     content_id_map = models.TextField(_("Content-ID map"), blank=True,
                                       help_text=_("Dictionary mapping Content-ID (CID) values to corresponding attachments. Stored in JSON."))
     received = models.DateTimeField(_("received"), auto_now_add=True)
+    processed = models.CharField(_("processed"), max_length=255, blank=True)
 
     class Meta:
         abstract = True
